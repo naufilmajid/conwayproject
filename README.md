@@ -2,9 +2,9 @@
 ~ implemented in C 
 ### Group Members:
 ##### std_id & names
-63361    Naufil Majid
-62765    Ayesha Aman
-63372    Rabbiya Mehmood
+63361  |   Naufil Majid,
+62765  |  Ayesha Aman,
+63372  |  Rabbiya Mehmood
 
 ## Phase-01:
 - program should take input from file
