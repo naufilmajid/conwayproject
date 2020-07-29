@@ -39,3 +39,4 @@ int main( int argc, char* argv[] ) {
   
   print(last);  // display the last generation
 }
+}
