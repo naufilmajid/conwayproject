@@ -73,6 +73,31 @@ for (int l = 1; l < M - 1; l++)
 			}
 		}
 
+## Sample code for p_thread
+big_buff = malloc( ...);
+if(!big_buff) {
+  perror("mallocing big buffer failed\n");
+}
+
+// declare a global pthread_barrier_t var
+static pthread_barrier_t barrier;
+
+// initialize it somewhere before using it:
+if(pthread_barrier_init(&barrier, NULL, num_threads)){
+   perror("Error: with pthread barrier init\n");
+   exit(1); 
+}
+
+// threads than can call pthread_barrier_wait to synchronize: 
+ret = pthread_barrier_wait(&barrier);
+if(ret != 0 && ret != PTHREAD_BARRIER_SERIAL_THREAD) {
+  perror("Error: can't wait on pthread barrier\n");
+  exit(1);
+}
+
+## Final Phase:
+it includes multithreading implementation.
+
 ##Problems we faced:
 During implementation of if, else loops we had face problem they can not work as they would do but after trying many time they get set and shows better output than previous experience.
 Simple implementation is much easy as compare to multithreading.
