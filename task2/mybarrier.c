@@ -30,7 +30,6 @@ void barrier_destroy(mybarrier *barrier) {
 //
 // barrier_wait
 //
-// Wait for all members of a barrier to reach the barrier. When
 // the count (of remaining members) reaches 0, release all threads
 //
 void barrier_wait(mybarrier *barrier) {
@@ -65,8 +64,6 @@ void barrier_wait(mybarrier *barrier) {
     //
     pthread_setcancelstate(PTHREAD_CANCEL_DISABLE, &cancel);
 
-    // Wait until the barrier's cycle changes, which means
-    // that it has been broadcast, and we don't want to wait
     // anymore.
     //
     while (cycle == barrier->cycle) {
